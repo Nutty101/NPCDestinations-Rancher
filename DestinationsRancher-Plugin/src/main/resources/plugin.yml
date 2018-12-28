@@ -1,0 +1,8 @@
+name: NPCDestinations_Rancher
+main: net.livecar.nuttyworks.destinations_rancher.DestRancher_Plugin
+description: Plugin for NPC Destinations that enables NPC ranchers.
+version: 2.3.1
+api-version: 1.13
+author: Sir_Nutty@Spigot
+softdepend: [NPC_Destinations]
+website: https://www.spigotmc.org/resources/nunpcdestinations-create-living-npcs-1-8-3-1-10-2.13863/

@@ -1,0 +1,73 @@
+﻿language:
+  version: 1.0.1
+
+messages:
+  no_permissions: "[{\"text\":\"[\",\"color\":\"yellow\"},{\"text\":\"nuDestinationrancher\",\"color\":\"green\"},{\"text\":\"] \",\"color\":\"yellow\"},{\"text\":\"No permissions\"}]"
+  invalid_command:  "[{\"text\":\"[\",\"color\":\"yellow\"},{\"text\":\"nuDestinationrancher\",\"color\":\"green\"},{\"text\":\"] \",\"color\":\"yellow\"},{\"text\":\"Invalid command\"}]"
+  invalid_npc:  "[{\"text\":\"[\",\"color\":\"yellow\"},{\"text\":\"nuDestinationrancher\",\"color\":\"green\"},{\"text\":\"] \",\"color\":\"yellow\"},{\"text\":\"You must have a NPC selected to use this command or add --npc # anywhere in your command.\"}]"
+  npc_permission: "[{\"text\":\"[\",\"color\":\"yellow\"},{\"text\":\"nuDestinationrancher\",\"color\":\"green\"},{\"text\":\"] \",\"color\":\"yellow\"},{\"text\":\"You do not have permissions to this NPC\"}]"
+  plugin_debug: "[{\"text\":\"&2[&enuDestinationrancher&2] &6 <message>\"}]"
+  plugin_help_command: ",{\"text\":\"locrancher\",\"color\":\"yellow\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"/npcdest locrancher \"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"&eUsage&2:\n  &f/npcdest locrancher <loc#> &6--npc #\n&eDescription&2:\n  &fShows the menu to configure a rancher location.\n&ePermission&2:\n  &fnpcdestinations.edit<own/all>.locranch\"}},{\"text\":\" \",\"color\":\"white\"}" 
+  plugin_destination: ",{\"text\":\"&a♉&e\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"/npcdest --npc <npc.id> locrancher <location.id> \"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"                 &6rancher Menu \n&f   Click to show the config menu.\n&eUsage&2:\n  &f/npcdest locrancher <loc#> &6--npc #\n&eDescription&2:\n  &fShows a menu to configure the rancher settings for a location\n&ePermission&2:\n  &fnpcdestinations.edit<own/all>.locranch\n&ePermission&2:\n  &fnpcdestinations.edit<own/all>.locranch\"}}" 
+  plugin_description: "NPC Destinations ranchers \n&f  This plugin allows you to setup an NPC to ranch crops based\n&f on a radius distance, or a worldguard region.\n\n&f  All items that are ranched, are put into\n&f the npc's inventory. \n&ePermission&2:\n  &fnpcdestinations.edit<own/all>.locranch" 
+  command_badargs: "[{\"text\":\"Invalid arguments /npcdest locrancher <loc#>\",\"color\":\"GREEN\"}]"
+  command_noworldguard: "[{\"text\":\"Regions are not supported without worldguard \",\"color\":\"GREEN\"}]"
+  command_invalidregion: "[{\"text\":\"That region does not exist in this world\",\"color\":\"GREEN\"}]"
+  command_added_notactive: "[{\"text\":\"The location has been assigned as a rancher location.\",\"color\":\"GREEN\"}]"
+  command_added_active: "[{\"text\":\"The location has been assigned as a rancher location, and it has been activated.\",\"color\":\"GREEN\"}]"
+  command_removed: "[{\"text\":\"rancher has been removed from the requested location\",\"color\":\"GREEN\"}]"
+  rancher_jobs: "[{\"text\":\"[\",\"color\":\"yellow\"},{\"text\":\"<location.id>\",\"color\":\"green\"},{\"text\":\"] \",\"color\":\"yellow\"},{\"text\":\"Pending Actions:\",\"color\":\"GREEN\"},{\"text\":\" <message>\",\"color\":\"white\"}]"
+
+result_messages:
+  true_text: true
+  false_text: false
+  disabled_text: Disabled
+
+console_messages:
+  plugin_ondisable: nuDestinationrancher shutdown.
+  plugin_savingdata: Saving NPC data
+  plugin_savingerror: Failed saving NPC data
+  plugin_error: Error> <message>
+  plugin_debug: Debug> <message>
+  plugin_langloaded: Language Loaded (<message>)
+  plugin_version: MC Version found (<message>)
+  plugin_unknownversion: Unknown minecraft version <message>. Check for updates (https://www.spigotmc.org/resources/nunpcdestinations-automate-npc-travel-and-locations-1-8-3-1-9-4.13863/)
+  worldguard_found: Worldguard found V(<message>), regions supported
+  worldguard_notfound: Worldguard not found, region support disabled
+
+help_messages:
+  toggleanimal: "Toggle if an animal will be processed by the rancher\n&ePermission&2:\n  &fnpcdestinations.edit<own/all>.locranch" 
+
+debug_messages:
+  path_processing: "[{\"text\":\"[\",\"color\":\"yellow\"},{\"text\":\"nuDestinationrancher\",\"color\":\"green\"},{\"text\":\"] \",\"color\":\"yellow\"},{\"text\":\"Processing for (<npc.id>) <npc.name>\",\"color\":\"GREEN\"}]"
+  
+setting_menu:
+- "[{\"text\":\"--\",\"color\":\"gold\"},{\"text\":\"[\",\"color\":\"white\"},{\"text\":\"NPCDestinations Rancher\",\"color\":\"yellow\"},{\"text\":\"]\",\"color\":\"white\"},{\"text\":\"-----------------------------\",\"color\":\"gold\"}]"
+- "[{\"text\":\"Max Babies\",\"color\":\"green\"},{\"text\":\":\",\"color\":\"yellow\"},{\"text\":\" \",\"color\":\"yellow\"},{\"text\":\"<rancher.maxbabies>\",\"clickEvent\":{\"action\":\"suggest_command\",\"value\":\"/npcdest locrancher --npc <npc.id> <location.id> maxbabies \"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"&eChange the maximum amount of babies allowed in the region\n&f  Leave blank for no limit\"},\"color\":\"white\"},{\"text\":\" \",\"color\":\"yellow\"}"
+- ",{\"text\":\"Max Adults\",\"color\":\"green\"},{\"text\":\":\",\"color\":\"yellow\"},{\"text\":\" \",\"color\":\"yellow\"},{\"text\":\"<rancher.maxadults>\",\"clickEvent\":{\"action\":\"suggest_command\",\"value\":\"/npcdest locrancher --npc <npc.id> <location.id> maxadults \"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"&eChange the maximum amount of adult animals allowed in the region\n&f  Leave blank for no limit\"},\"color\":\"white\"},{\"text\":\" \",\"color\":\"yellow\"}"
+- ",{\"text\":\"Region Name\",\"color\":\"green\"},{\"text\":\":\",\"color\":\"yellow\"},{\"text\":\" \",\"color\":\"yellow\"},{\"text\":\"<rancher.regionname>\",\"clickEvent\":{\"action\":\"suggest_command\",\"value\":\"/npcdest locrancher --npc <npc.id> <location.id> regionname \"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"&eSet the region name for this ranch\"},\"color\":\"white\"},{\"text\":\" \",\"color\":\"yellow\"}]"
+- "[{\"text\":\"--\",\"color\":\"gold\"},{\"text\":\"[\",\"color\":\"white\"},{\"text\":\"Ranched Animals\",\"color\":\"yellow\"},{\"text\":\"]\",\"color\":\"white\"},{\"text\":\"------------------------------------\",\"color\":\"gold\"}]"
+- "[<rancher.animallist>]"  
+- "[{\"text\":\"--\",\"color\":\"gold\"},{\"text\":\"[\",\"color\":\"white\"},{\"text\":\"Performed Actions\",\"color\":\"yellow\"},{\"text\":\"]\",\"color\":\"white\"},{\"text\":\"----------------------------------\",\"color\":\"gold\"}]"
+- "[<rancher.actions>]"  
+
+status_menu:
+- "[{\"text\":\"--\",\"color\":\"gold\"},{\"text\":\"[\",\"color\":\"white\"},{\"text\":\"NPCDestinations Rancher\",\"color\":\"yellow\"},{\"text\":\"]\",\"color\":\"white\"},{\"text\":\"-----------------------------\",\"color\":\"gold\"}]"
+- "[{\"text\":\"Max Babies\",\"color\":\"green\"},{\"text\":\":\",\"color\":\"yellow\"},{\"text\":\" \",\"color\":\"yellow\"},{\"text\":\"<rancher.maxbabies>\",\"clickEvent\":{\"action\":\"suggest_command\",\"value\":\"/npcdest locrancher --npc <npc.id> <location.id> maxbabies \"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"&eChange the maximum amount of babies allowed in the region\n&f  Leave blank for no limit\"},\"color\":\"white\"},{\"text\":\" \",\"color\":\"yellow\"}"
+- ",{\"text\":\"Max Adults\",\"color\":\"green\"},{\"text\":\":\",\"color\":\"yellow\"},{\"text\":\" \",\"color\":\"yellow\"},{\"text\":\"<rancher.maxadults>\",\"clickEvent\":{\"action\":\"suggest_command\",\"value\":\"/npcdest locrancher --npc <npc.id> <location.id> maxadults \"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"&eChange the maximum amount of adult animals allowed in the region\n&f  Leave blank for no limit\"},\"color\":\"white\"},{\"text\":\" \",\"color\":\"yellow\"}"
+- ",{\"text\":\"Region Name\",\"color\":\"green\"},{\"text\":\":\",\"color\":\"yellow\"},{\"text\":\" \",\"color\":\"yellow\"},{\"text\":\"<rancher.regionname>\",\"clickEvent\":{\"action\":\"suggest_command\",\"value\":\"/npcdest locrancher --npc <npc.id> <location.id> regionname \"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"&eSet the region name for this ranch\"},\"color\":\"white\"},{\"text\":\" \",\"color\":\"yellow\"}]"
+- "[{\"text\":\"--\",\"color\":\"gold\"},{\"text\":\"[\",\"color\":\"white\"},{\"text\":\"Ranched Animals\",\"color\":\"yellow\"},{\"text\":\"]\",\"color\":\"white\"},{\"text\":\"------------------------------------\",\"color\":\"gold\"}]"
+- "[<rancher.animallist>]"  
+- "[{\"text\":\"--\",\"color\":\"gold\"},{\"text\":\"[\",\"color\":\"white\"},{\"text\":\"Performed Actions\",\"color\":\"yellow\"},{\"text\":\"]\",\"color\":\"white\"},{\"text\":\"----------------------------------\",\"color\":\"gold\"}]"
+- "[<rancher.actions>]"  
+
+command_jsonhelp:
+  command_locrancher_help: "{\"text\":\"<commandname>\",\"color\":\"green\",\"clickEvent\":{\"action\":\"suggest_command\",\"value\":\"/npcdest <commandname> \"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"&6Destinations Rancher Plugin \n&eUsage&2:\n  &f/npcdest <commandname> <loc#> &6--npc #\n&eDescription&2:\n  &fShows a menu to configure the rancher settings for a location\n&ePermission&2:\n<permission>\"}}" 
+  command_rancherstatus_help: "{\"text\":\"<commandname>\",\"color\":\"green\",\"clickEvent\":{\"action\":\"suggest_command\",\"value\":\"/npcdest <commandname> \"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"&6Destinations Rancher Plugin \n&eUsage&2:\n  &f/npcdest <commandname> &6--npc #\n&eDescription&2:\n  &fShows valid pending actions for each location that the rancher will perform\n&ePermission&2:\n<permission>\"}}" 
+
+debug_messages:
+  walking_animal: "[{\"text\":\"[\",\"color\":\"yellow\"},{\"text\":\"NPCDest\",\"color\":\"green\"},{\"text\":\"] \",\"color\":\"yellow\"},{\"text\":\"<npc.id> <npc.name> - Walking to animal\",\"color\":\"GREEN\"}]"
+  breeding_animal: "[{\"text\":\"[\",\"color\":\"yellow\"},{\"text\":\"NPCDest\",\"color\":\"green\"},{\"text\":\"] \",\"color\":\"yellow\"},{\"text\":\"<npc.id> <npc.name> - Breeding animal\",\"color\":\"GREEN\"}]"
+  sheering_sheep: "[{\"text\":\"[\",\"color\":\"yellow\"},{\"text\":\"NPCDest\",\"color\":\"green\"},{\"text\":\"] \",\"color\":\"yellow\"},{\"text\":\"<npc.id> <npc.name> - Sheering sheep\",\"color\":\"GREEN\"}]"
+  killing_animal: "[{\"text\":\"[\",\"color\":\"yellow\"},{\"text\":\"NPCDest\",\"color\":\"green\"},{\"text\":\"] \",\"color\":\"yellow\"},{\"text\":\"<npc.id> <npc.name> - Killing animal\",\"color\":\"GREEN\"}]"
+  milking_cow: "[{\"text\":\"[\",\"color\":\"yellow\"},{\"text\":\"NPCDest\",\"color\":\"green\"},{\"text\":\"] \",\"color\":\"yellow\"},{\"text\":\"<npc.id> <npc.name> - Milking cow\",\"color\":\"GREEN\"}]"
